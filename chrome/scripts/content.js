@@ -19,7 +19,7 @@
       let el = ad;
       while (el.innerText === 'Ad') { el = el.parentElement; }
 
-      fetch('http://localhost:3000/impressions', {
+      fetch('https://x-advertising-tracker-79141fdedf53.herokuapp.com/impressions', {
         method: 'POST',
         mode: 'no-cors',
         headers: {
