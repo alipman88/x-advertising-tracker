@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This codebase tracks which companies are buying ads on X / Twitter.
 
-Things you may want to cover:
+### Instructions
 
-* Ruby version
+1. Deploy the app to Heroku or your cloud hosting service of choice, and attach a Postgres database. Set a `DATABASE_URL` environment variable to the database's URL.
 
-* System dependencies
+2. Add your IP address to the whitelisted `ip_addresses` table via the Rails console: `IpAddress.create(ip: '1.2.3.4')`.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+3. Install the chrome extension in the `chrome` directory. (See instructions for loading unpacked extensions [here](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked).)

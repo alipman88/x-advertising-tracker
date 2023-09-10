@@ -1,0 +1,33 @@
+<div class='container'>
+  <h1>Which companies are currently advertising the most on X / Twitter?</h1>
+  <hr/>
+  <p><i>Twitter ads logged over the last seven days</i></p>
+
+  <table>
+    <tr>
+      <th>Rank</th>
+      <th>Handle</th>
+      <th>Ad count</th>
+      <th>Most recently logged</th>
+    </tr>
+
+    <%- @impressions.each_with_index do |impression, i| %>
+      <tr>
+        <td><%= i + 1 %></td>
+        <td><%= link_to("@#{impression.handle} • #{impression.name}", "https://twitter.com/#{impression.handle}") %></td>
+        <td><%= impression.count %></td>
+        <td><%= impression.timestamp %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <hr/>
+
+  <p style='text-align: right; font-style: italic;'>
+    <%- if Impression.last %>
+      updated <%= time_ago_in_words(Impression.last.created_at) %> ago
+      |
+    <% end %>
+    <%= link_to('source', 'https://github.com/alipman88/x-advertising-tracker') %>
+  </p>
+</div>

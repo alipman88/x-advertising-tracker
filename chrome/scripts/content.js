@@ -19,6 +19,15 @@
       let el = ad;
       while (el.innerText === 'Ad') { el = el.parentElement; }
 
+      fetch('http://localhost:3000/impressions', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ad: el.innerText }),
+      })
+
       console.log(el.innerText);
       ad.innerText = 'Ad Logged';
     }

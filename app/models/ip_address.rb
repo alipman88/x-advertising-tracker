@@ -1,0 +1,1 @@
+class IpAddress < ApplicationRecord; end
