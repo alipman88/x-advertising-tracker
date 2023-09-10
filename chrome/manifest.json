@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "X Advertising Tracker",
+  "description": "Track Which Companies Are Advertising on X/Twitter",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/content.js"
+      ],
+      "matches": [
+        "*://twitter.com/*",
+        "*://x.com/*"
+      ]
+    }
+  ]
+}
