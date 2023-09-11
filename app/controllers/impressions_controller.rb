@@ -5,7 +5,7 @@ class ImpressionsController < ApplicationController
   def index
     @impressions = Impression
       .select('handle, MAX(name) name, COUNT(*) count, MAX(created_at) timestamp')
-      .where(created_at: 7.days.ago..)
+      .where(id: 2341.., created_at: 7.days.ago..)
       .group(:handle)
       .order(Arel.sql('COUNT(*) DESC, MAX(created_at) DESC'))
       .limit(50)
